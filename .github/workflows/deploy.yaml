@@ -18,8 +18,6 @@ jobs:
             -   name: Install dependencies
                 run: npm install
             -   name: Build the application
-                env:
-                    URL_PATH: '/${{ github.event.repository.name }}'
                 run: npm run build
             -   name: Upload application artifacts
                 uses: actions/upload-pages-artifact@v3.0.1
