@@ -12,6 +12,9 @@ const config = {
             precompress: true,
             strict: true,
         }),
+        paths: {
+            base: process.argv.includes("dev") ? "/" : process.env.URL_PATH
+        },
         env: {
             publicPrefix: "PUBLIC_",
             privatePrefix: "PRIVATE_"
