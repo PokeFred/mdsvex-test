@@ -1,4 +1,4 @@
-import { existsSync, rmdirSync, mkdirSync, writeFileSync } from "node:fs"
+import { existsSync, rmSync, mkdirSync, writeFileSync } from "node:fs"
 import { join } from "node:path"
 
 const INPUT: string = `
@@ -18,7 +18,7 @@ const INPUT: string = `
 async function main(): Promise<void> {
     const path: string = "./build"
 
-    if (existsSync(path)) rmdirSync(path, { recursive: true })
+    if (existsSync(path)) rmSync(path, { recursive: true })
     mkdirSync(path)
     writeFileSync(join(path, "index.html"), INPUT, { encoding: "utf-8" })
 }
